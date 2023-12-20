@@ -27,6 +27,11 @@ const GoalInput = ({
 		setInputValue("");
 	};
 
+	const handleCloseModal = () => {
+		handleModalDisplay("close");
+		setInputValue("");
+	};
+
 	return (
 		<Modal visible={displayModal} animationType="slide">
 			<View style={styles.inputContainer}>
@@ -45,11 +50,7 @@ const GoalInput = ({
 
 				<View style={styles.buttonContainer}>
 					<View style={styles.button}>
-						<Button
-							title="Cancel"
-							onPress={() => handleModalDisplay("close")}
-							color="#f31282"
-						/>
+						<Button title="Cancel" onPress={handleCloseModal} color="#f31282" />
 					</View>
 					<View style={styles.button}>
 						<Button title="Add ToDo" onPress={addGoalHandler} color="#6d1bd8" />
