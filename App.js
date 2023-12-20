@@ -21,9 +21,9 @@ export default function App() {
 
 	const handleInputValidation = (enteredText) => {
 		if (!enteredText.trim()) {
-			setErrorMessage("Please enter a goal text.");
+			setErrorMessage("Please enter the task.");
 		} else if (goals.some((goal) => enteredText === goal.goalText)) {
-			setErrorMessage("The goal already exists, please enter a new goal :)");
+			setErrorMessage("The task already exists, please enter a new task :)");
 		} else {
 			setErrorMessage("");
 		}
@@ -58,7 +58,7 @@ export default function App() {
 			<StatusBar style="light" />
 			<View style={styles.appContainer}>
 				<Button
-					title="Add New Goal"
+					title="Add New toDo"
 					color="#a065ec"
 					onPress={() => handleModalDisplay("open")}
 				/>
@@ -88,7 +88,7 @@ export default function App() {
 							alwaysBounceVertical={false}
 						/>
 					) : (
-						<Text style={styles.text}>No goals yet... Please add some.</Text>
+						<Text style={styles.text}>No tasks yet... Please add some.</Text>
 					)}
 				</View>
 			</View>
